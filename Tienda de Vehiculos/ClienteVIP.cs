@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tienda_de_Vehiculos
 {
-    internal class ClienteVIP
+    public class ClienteVIP: Cliente
     {
+
+
     }
 }

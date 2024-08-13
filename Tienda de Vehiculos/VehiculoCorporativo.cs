@@ -4,9 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tienda_de_Vehiculos
+namespace Pedidos
 {
-    internal class VehiculoCorporativocs
+     public class VehiculoCorporativo: Vehiculo
     {
+
+        public void SolicitarDatos()
+        {
+            base.SolicitarDatos();
+            Tipo = "corporativo";
+
+        }
+
+
     }
 }

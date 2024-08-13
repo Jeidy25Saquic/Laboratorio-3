@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tienda_de_Vehiculos
+namespace Pedidos_Clientes
 {
     public class Cliente
     {
@@ -14,7 +14,7 @@ namespace Tienda_de_Vehiculos
 
         public string Id { get; set; }
         public string Nombre { get; set; }
-        public string Direccion { get; set;}
+        public string Direccion { get; set; }
 
         public string Correo { get; set; }
 
@@ -30,21 +30,21 @@ namespace Tienda_de_Vehiculos
 
 
 
-         public void SolicitarDatos()
+        public void SolicitarDatos()
         {
-               Console.Write("Ingrese Identificacion: ");
-               string id= Console.ReadLine();
-               Console.Write("Ingrese el nombre del cliente: ");
-                string nombre = Console.ReadLine();
-                Console.Write("Ingrese  Direccion: ");
-                string direccion = Console.ReadLine();
-                Console.Write("Ingrese  Correo Electronico: ");
-                string correo = Console.ReadLine();
-                
-               AgregarDatos(id, nombre, direccion,correo);
+            Console.WriteLine("Ingrese Identificacion");
+            string id = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del cliente");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese  Direccion");
+            string direccion = Console.ReadLine();
+            Console.WriteLine("Ingrese  Direccion");
+            string correo = Console.ReadLine();
+
+            AgregarDatos(id, nombre, direccion, correo);
         }
 
-        public void AgregarDatos( string id, string nombre, string direccion, string correo)
+        public void AgregarDatos(string id, string nombre, string direccion, string correo)
         {
             Nombre = nombre;
             Direccion = direccion;
@@ -52,7 +52,7 @@ namespace Tienda_de_Vehiculos
             Id = id;
         }
 
-        public void DescuentoCliente( double descuento)
+        public void DescuentoCliente(double descuento)
         {
             Descuento = descuento;
         }

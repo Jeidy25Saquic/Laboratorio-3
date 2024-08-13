@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tienda_de_Vehiculos
+namespace Pedidos_Clientes
 {
     public class ClienteRegular: Cliente
     {
-
     }
 }

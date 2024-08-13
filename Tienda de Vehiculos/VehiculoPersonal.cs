@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tienda_de_Vehiculos
+namespace Pedidos
 {
-    internal class VehiculoPersonal
+    public class VehiculoPersonal:Vehiculo
     {
+        public void SolicitarDatos()
+        {
+            base.SolicitarDatos();
+            Tipo = "personal";
+
+        }
     }
 }
