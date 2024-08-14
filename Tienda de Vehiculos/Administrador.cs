@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using Tienda_de_Vehiculos;
+using Pedidos;
 
 namespace Pedidos
 {
@@ -11,13 +12,17 @@ namespace Pedidos
     {
         List<Cliente> clientes = new List<Cliente>();
         List<Vehiculo> vehiculos = new List<Vehiculo>();
+        List<Producto> productos = new List<Producto>();
+        List<Pedidos> pedidos = new List<Pedidos>();
         public void RegistrarCliente()
         {
             bool continuar = true;
             do
             {
                 try
-                {  
+                {
+                   
+                    Console.WriteLine();
                     Console.WriteLine("1. Cliente Regular");
                     Console.WriteLine("2. Cliente VIP");
                     Console.WriteLine("3. Cliente Corporativo");
@@ -49,6 +54,7 @@ namespace Pedidos
 
                             break;
                             case 4:
+                            Console.Clear();
                             continuar= false;
                             break;
 
@@ -74,7 +80,7 @@ namespace Pedidos
             {
                 try
                 {
-                   ;
+                  
                     Console.WriteLine("1. Vehiculo Personal");
                     Console.WriteLine("2. Vehiculo Corporativo");
                     Console.WriteLine("3. Salir");
@@ -98,6 +104,7 @@ namespace Pedidos
                             break;
                        
                         case 3:
+                            Console.Clear();
                             continuar = false;
                             break;
 
@@ -117,12 +124,69 @@ namespace Pedidos
 
         }
 
+        public void MostrarClientes()
+        {
+            int contador = 0;
+            Console.WriteLine();
+            Console.WriteLine("-------------------Informacion sobre clientes:-----------------------");
+            
+            foreach (var cliente in clientes)
+            {
+                contador++;
+                Console.WriteLine();
+                Console.WriteLine($"Cliente #{contador}");
+                cliente.MostrarCliente();
+               
+            }
+        }
 
+        public void MostrarVehiculos()
+        {
+            int contador = 0;
+            Console.WriteLine();
+            Console.WriteLine("-------------------Informacion sobre vehiculos:-----------------------");
+
+           foreach (var vehiculo in vehiculos)
+            {
+                contador++;
+                Console.WriteLine();
+                Console.WriteLine($"Vehiculo #{contador}");
+                vehiculo.MostrarVehiculo();
+
+            }
+
+
+          
+        }
+
+
+        public void RegistrarProducto()
+        {
+            
+            Producto producto = new Producto();
+            producto.NuevoProducto();
+            productos.Add(producto);
+
+        }
+
+        public void MostrarProductos()
+        {
+
+            Console.WriteLine();
+            Console.WriteLine("-------------Lista de productos:---------- ");
+
+
+          foreach(var producto in productos)
+            {
+                Console.WriteLine();
+                producto.MostrarProducto();
+            }
+
+        }
 
 
 
     }
-
 
 
 

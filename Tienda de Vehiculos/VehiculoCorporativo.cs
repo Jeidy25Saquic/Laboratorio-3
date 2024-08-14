@@ -9,11 +9,16 @@ namespace Pedidos
      public class VehiculoCorporativo: Vehiculo
     {
 
-        public void SolicitarDatos()
+        public override void SolicitarDatos()
         {
             base.SolicitarDatos();
-            Tipo = "corporativo";
+            Tipo = "Corporativo";
 
+        }
+
+        public override void MostrarVehiculo()
+        {
+            base.MostrarVehiculo();
         }
 
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tienda_de_Vehiculos
+namespace Pedidos
 {
     public class Cliente
     {
@@ -30,7 +30,7 @@ namespace Tienda_de_Vehiculos
 
 
 
-         public void SolicitarDatos()
+         public virtual  void SolicitarDatos()
         {
                Console.Write("Ingrese Identificacion: ");
                string id= Console.ReadLine();
@@ -52,10 +52,10 @@ namespace Tienda_de_Vehiculos
             Id = id;
         }
 
-        public void DescuentoCliente( double descuento)
+        public virtual void MostrarCliente()
         {
-            Descuento = descuento;
+            Console.WriteLine($" Id: {Id} Nombre:  {Nombre}  Direccion: {Direccion} Correo: {Correo}");
         }
-
+        
     }
 }

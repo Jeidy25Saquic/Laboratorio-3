@@ -12,7 +12,8 @@ namespace Pedidos
         public string Matricula { get; set; }
         public string Combustible { get; set; }
         public string Tipo { get; set; }
-
+         
+        public bool Disponible {  get; set; }
         public Vehiculo(string modelo, string matricula, string combustible, string tipo)
         {
             Modelo = modelo;
@@ -25,7 +26,7 @@ namespace Pedidos
         {
         }
 
-        public void SolicitarDatos()
+        public virtual void SolicitarDatos()
         {
             Console.Write("Ingrese Matricula: ");
             string matricula = Console.ReadLine();
@@ -41,6 +42,21 @@ namespace Pedidos
             Matricula=matricula;
             Modelo = modelo;
             Combustible=combustible;
+            Disponible = true;
         }
+
+        public  virtual void MostrarVehiculo()
+        {
+            Console.WriteLine($" Matricula: {Matricula}  Modelo: {Modelo} Tipo de Combustible: {Combustible} Tipo: {Tipo}");
+        }
+
+
+
+        public void Disponibilidad(bool disponible)
+        {
+            Disponible=disponible;
+        }
+
+
     }
 }

@@ -8,11 +8,15 @@ namespace Pedidos
 {
     public class VehiculoPersonal:Vehiculo
     {
-        public void SolicitarDatos()
+        public  override void SolicitarDatos()
         {
             base.SolicitarDatos();
             Tipo = "personal";
 
+        }
+        public override void MostrarVehiculo()
+        {
+            base.MostrarVehiculo();
         }
     }
 }

@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tienda_de_Vehiculos
+namespace Pedidos
 {
     public class ClienteRegular: Cliente
     {
+
+        public override void MostrarCliente()
+        {
+            base.MostrarCliente();
+            Console.WriteLine($" Tipo de Cliente: Regular");
+        }
+
 
     }
 }
