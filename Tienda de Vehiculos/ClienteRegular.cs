@@ -13,6 +13,7 @@ namespace Pedidos
         {
             base.MostrarCliente();
             Console.WriteLine($" Tipo de Cliente: Regular");
+            Tipo = "Regular";
         }
 
 

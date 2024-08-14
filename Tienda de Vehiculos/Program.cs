@@ -20,10 +20,12 @@ class Program
                 Console.WriteLine("3. Mostrar Clientes");
                 Console.WriteLine("4. Mostrar Vehiculos ");
                 Console.WriteLine("5. Registrar Producto");
-                Console.WriteLine("7. Mostrar Productos");
+                Console.WriteLine("6. Mostrar Productos");
+                Console.WriteLine("7. Registrar Pedidos");
+                Console.WriteLine("8. Mostrar Pedidos");
 
                 opcion = Convert.ToInt32(Console.ReadLine());
-                while (opcion < 1 || opcion > 6) 
+                while (opcion < 1 || opcion > 10) 
                 {
                     Console.WriteLine("Valor no esta en el rango...");
                     Console.WriteLine("Ingrese un valor: ");
@@ -56,6 +58,15 @@ class Program
                         Console.Clear();
                         administrador.MostrarProductos();
                         break;
+                    case 7:
+                        Console.Clear();
+                        administrador.Pedido();
+                        break;
+                    case 8:
+                        Console.Clear();
+                        administrador.MostrarPedido();
+                        break;
+
                     case 10:
                         continuar = false;
                         break;

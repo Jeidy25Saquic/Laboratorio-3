@@ -21,7 +21,7 @@ namespace Pedidos
             {
                 try
                 {
-                   
+
                     Console.WriteLine();
                     Console.WriteLine("1. Cliente Regular");
                     Console.WriteLine("2. Cliente VIP");
@@ -42,7 +42,7 @@ namespace Pedidos
                             Console.WriteLine("Cliente VIP: ");
                             ClienteVIP clienteVIP = new ClienteVIP();
                             clienteVIP.SolicitarDatos();
-                           clientes.Add(clienteVIP);
+                            clientes.Add(clienteVIP);
 
                             break;
                         case 3:
@@ -53,9 +53,9 @@ namespace Pedidos
 
 
                             break;
-                            case 4:
+                        case 4:
                             Console.Clear();
-                            continuar= false;
+                            continuar = false;
                             break;
 
 
@@ -64,12 +64,13 @@ namespace Pedidos
                             Console.WriteLine();
                             break;
                     }
-                }catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Console.WriteLine("Ha ocurrido un error... " + ex.Message);
                 }
             } while (continuar == true);
-      
+
 
         }
 
@@ -80,7 +81,7 @@ namespace Pedidos
             {
                 try
                 {
-                  
+
                     Console.WriteLine("1. Vehiculo Personal");
                     Console.WriteLine("2. Vehiculo Corporativo");
                     Console.WriteLine("3. Salir");
@@ -98,11 +99,11 @@ namespace Pedidos
                             break;
                         case 2:
                             Console.WriteLine("Vehiculo Corporativo: ");
-                            VehiculoCorporativo vehiculoCorporativo=new VehiculoCorporativo();
+                            VehiculoCorporativo vehiculoCorporativo = new VehiculoCorporativo();
                             vehiculoCorporativo.SolicitarDatos();
                             vehiculos.Add(vehiculoCorporativo);
                             break;
-                       
+
                         case 3:
                             Console.Clear();
                             continuar = false;
@@ -129,14 +130,14 @@ namespace Pedidos
             int contador = 0;
             Console.WriteLine();
             Console.WriteLine("-------------------Informacion sobre clientes:-----------------------");
-            
+
             foreach (var cliente in clientes)
             {
                 contador++;
                 Console.WriteLine();
                 Console.WriteLine($"Cliente #{contador}");
                 cliente.MostrarCliente();
-               
+
             }
         }
 
@@ -146,7 +147,7 @@ namespace Pedidos
             Console.WriteLine();
             Console.WriteLine("-------------------Informacion sobre vehiculos:-----------------------");
 
-           foreach (var vehiculo in vehiculos)
+            foreach (var vehiculo in vehiculos)
             {
                 contador++;
                 Console.WriteLine();
@@ -156,13 +157,13 @@ namespace Pedidos
             }
 
 
-          
+
         }
 
 
         public void RegistrarProducto()
         {
-            
+
             Producto producto = new Producto();
             producto.NuevoProducto();
             productos.Add(producto);
@@ -175,21 +176,37 @@ namespace Pedidos
             Console.WriteLine();
             Console.WriteLine("-------------Lista de productos:---------- ");
 
-
-          foreach(var producto in productos)
+            int contador = 0;
+            foreach (var producto in productos)
             {
                 Console.WriteLine();
+                contador++;
+                Console.WriteLine($"Producto #{contador}");
                 producto.MostrarProducto();
             }
 
+
+
+
+        }
+
+        public void Pedido()
+        {
+            Pedidos pedido = new Pedidos();
+            
+            pedido.NuevoPedido(clientes,productos,vehiculos);
+            pedidos.Add(pedido);
+        }
+        
+       public void MostrarPedido()
+        {
+            foreach (var pedido in pedidos)
+            {
+                pedido.MostrarPedido();
+            }
         }
 
 
-
     }
-
-
-
-
 
 }

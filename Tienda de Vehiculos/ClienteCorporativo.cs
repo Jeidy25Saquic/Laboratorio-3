@@ -16,12 +16,13 @@ namespace Pedidos
         {
         }
 
-        List<Vehiculo> vehiculos {  get; set; }= new List<Vehiculo>();
+        List<Vehiculo> vehiculosClienteCorporativo {  get; set; }= new List<Vehiculo>();
 
         public override void MostrarCliente()
         {
             base.MostrarCliente();
             Console.WriteLine($" Tipo de Cliente: Corporativo");
+            Tipo = "Corporartivo";
         }
         public override void SolicitarDatos()
         {

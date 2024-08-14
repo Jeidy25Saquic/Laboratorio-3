@@ -13,6 +13,7 @@ namespace Pedidos
         {
             base.MostrarCliente();
             Console.WriteLine($" Tipo de Cliente: VIP");
+            Tipo = "VIP";
         }
 
         public override void SolicitarDatos()

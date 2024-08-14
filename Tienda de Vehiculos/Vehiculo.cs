@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pedidos
 {
@@ -14,6 +15,8 @@ namespace Pedidos
         public string Tipo { get; set; }
          
         public bool Disponible {  get; set; }
+
+        Cliente Cliente { get; set; }
         public Vehiculo(string modelo, string matricula, string combustible, string tipo)
         {
             Modelo = modelo;
@@ -47,9 +50,21 @@ namespace Pedidos
 
         public  virtual void MostrarVehiculo()
         {
-            Console.WriteLine($" Matricula: {Matricula}  Modelo: {Modelo} Tipo de Combustible: {Combustible} Tipo: {Tipo}");
+            Console.WriteLine($" Matricula: {Matricula}  Modelo: {Modelo} Tipo de Combustible: {Combustible} Tipo: {Tipo} Disponible {Disponible}");
         }
 
+
+        public bool BuscarMatricula(string matricula)
+        {
+            bool existe = true;
+            if (matricula != Matricula)
+            {
+
+                existe = false;
+            }
+
+            return existe;
+        }
 
 
         public void Disponibilidad(bool disponible)

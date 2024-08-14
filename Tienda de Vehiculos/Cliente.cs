@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pedidos
 {
@@ -18,7 +19,9 @@ namespace Pedidos
 
         public string Correo { get; set; }
 
+        public string Tipo { get; set; }
         public double Descuento { get; set; }
+        Vehiculo Vehiculo { get; set; }
 
         public Cliente(string id, string nombre, string direccion, string correo)
         {
@@ -35,7 +38,7 @@ namespace Pedidos
                Console.Write("Ingrese Identificacion: ");
                string id= Console.ReadLine();
                Console.Write("Ingrese el nombre del cliente: ");
-                string nombre = Console.ReadLine();
+                string nombre = Console.ReadLine().ToUpper();
                 Console.Write("Ingrese  Direccion: ");
                 string direccion = Console.ReadLine();
                 Console.Write("Ingrese  Correo Electronico: ");
@@ -56,6 +59,24 @@ namespace Pedidos
         {
             Console.WriteLine($" Id: {Id} Nombre:  {Nombre}  Direccion: {Direccion} Correo: {Correo}");
         }
-        
+
+        public bool BuscarCliente(string nombre)
+        {
+            bool existe = true;
+            if (nombre != Nombre)
+            {
+
+                existe = false;
+            }
+            
+            return existe;
+        }
+
+        public double descuento()
+        {
+            return Descuento;
+
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pedidos
 {
@@ -33,9 +34,20 @@ namespace Pedidos
 
         }
 
+        public bool BuscarProducto(string nombre)
+        {
+            bool existe = true;
+            if (nombre != Name)
+            {
+
+                existe = false;
+            }
+
+            return existe;
+        }
         public void MostrarProducto()
         {
-            Console.WriteLine($" Producto: {Name} Precio {Precio}");
+            Console.WriteLine($" Producto: {Name}    Precio: {Precio}");
         }
 
     }
