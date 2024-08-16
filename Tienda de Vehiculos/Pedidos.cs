@@ -121,7 +121,7 @@ namespace Pedidos
 
 
 
-        public void Agregar(Producto producto)
+       public void Agregar(Producto producto)
         {
             Productos.Add(producto);
         }
@@ -137,8 +137,9 @@ namespace Pedidos
             {
                 if (vehiculo.BuscarMatricula(matricula))
                 {
-                    if (vehiculo.Disponible)
+                    if (vehiculo.Disponible==true)
                     {
+                        
                         transporte = vehiculo;
                         vehiculo.Disponible = false;
                         existe = true;
@@ -158,6 +159,9 @@ namespace Pedidos
                 Console.WriteLine("No existe el vehículo con la matrícula ingresada.");
             }
         }
+
+
+
 
         public void MostrarPedido()
         {
